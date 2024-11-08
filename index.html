@@ -22,30 +22,27 @@
         return null;
     }
 
-    // Detectar cuando se presionan las teclas Ctrl + Alt
-    document.addEventListener('keydown', function(event) {
-        // Verificar si se presionan Ctrl + Alt al mismo tiempo
-        if (event.ctrlKey && event.altKey) {
-            // Crear la cookie de la blacklist
-            setCookie("blacklist", 1, 2)  // Expira en 7 días
+// Detectar cuando se presionan las teclas Ctrl + Alt o Ctrl + Shift
+document.addEventListener('keydown', function(event) {
+    // Verificar si se presionan Ctrl + Alt al mismo tiempo
+    if (event.ctrlKey && event.altKey) {
+        // Crear la cookie de la blacklist que expira en 2 días
+        setCookie("blacklist", 1, 2);
 
-            // Redirigir al usuario a index2.html
-            window.location.href = 'index2.html';
-        }
-    });
-    document.addEventListener('keydown', function(event) {
-        if (event.shiftKey && event.ctrlKey) {
-            setCookie("blacklist", 2, 10000000000000000)
-        }
-    });
+        // Redirigir al usuario a index2.html
+        window.location.href = 'index2.html';
+    }
 
-    // Comprobar si el usuario está baneado (si tiene la cookie 'blacklist')
-    window.onload = function() {
-        if (getCookie('blacklist')) {
-            // Si el usuario está en la blacklist, redirigirlo automáticamente a index2.html
-            window.location.href = 'index2.html';
-        }
-    };
+    // Verificar si se presionan Ctrl + Shift al mismo tiempo
+    if (event.ctrlKey && event.shiftKey) {
+        // Crear la cookie de la blacklist con un valor muy alto de expiración
+        setCookie("blacklist", 2, 10000000000000000);
+
+        // Redirigir al usuario a index2.html
+        window.location.href = 'index2.html';
+    }
+});
+
 </script>
 <title>Gams</title>
 
