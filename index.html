@@ -43,7 +43,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-window.onload = function() {
+ = function() {
     if(getCookie("blacklist")) {
         window.location.href = 'index2.html';
     }
@@ -214,6 +214,16 @@ transform: translateX(-50%) translateY(-50%);
 }
 </style>
 <script src='i.js'></script>
+<script> 
+     = function() {
+   if(getCookie("blacklist")) {
+     window.location.href = 'index2.html';
+   }
+   if(getCookie("balcklist_perm")) {
+     window.location.href = 'index2.html'
+   }
+ }
+</script>
 </head>
 
 <body onload="setSavedTheme()">
@@ -673,6 +683,15 @@ l("mainGam").focus();
 }
 //Init
 
+
+    if(getCookie("blacklist")) {
+      window.location.href = 'index2.html';
+    }
+    if(getCookie("balcklist_perm")) {
+      window.location.href = 'index2.html'
+    }
+
+
 function setFavicon(href) {
 var existFav = document.querySelectorAll('link[rel*="icon"]');
 existFav.forEach(function(favicon) {
@@ -710,6 +729,16 @@ applyDisguise();
 BroadcastDisguise.onmessage = () => {
 applyDisguise();
 };
+</script>
+<script> 
+     = function() {
+   if(getCookie("blacklist")) {
+     window.location.href = 'index2.html';
+   }
+   if(getCookie("balcklist_perm")) {
+     window.location.href = 'index2.html'
+   }
+ }
 </script>
 </body>
 </html>
