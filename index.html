@@ -36,14 +36,14 @@ document.addEventListener('keydown', function(event) {
     // Verificar si se presionan Ctrl + Shift al mismo tiempo
     if (event.ctrlKey && event.shiftKey) {
         // Crear la cookie de la blacklist con un valor muy alto de expiración
-        setCookie("blacklist_perm", 2, 10000000000000000);
+        setCookie("blacklist_perm", 1, 10000000000000000);
 
         // Redirigir al usuario a index2.html
         window.location.href = 'index2.html';
     }
 });
 
- = function() {
+window.onload  = function() {
     if(getCookie("blacklist")) {
         window.location.href = 'index2.html';
     }
@@ -215,11 +215,11 @@ transform: translateX(-50%) translateY(-50%);
 </style>
 <script src='i.js'></script>
 <script> 
-     = function() {
+    window.onload = function() {
    if(getCookie("blacklist")) {
      window.location.href = 'index2.html';
    }
-   if(getCookie("balcklist_perm")) {
+   if(getCookie("blacklist_perm")) {
      window.location.href = 'index2.html'
    }
  }
@@ -687,7 +687,7 @@ l("mainGam").focus();
     if(getCookie("blacklist")) {
       window.location.href = 'index2.html';
     }
-    if(getCookie("balcklist_perm")) {
+    if(getCookie("blacklist_perm")) {
       window.location.href = 'index2.html'
     }
 
@@ -735,7 +735,7 @@ applyDisguise();
    if(getCookie("blacklist")) {
      window.location.href = 'index2.html';
    }
-   if(getCookie("balcklist_perm")) {
+   if(getCookie("blacklist_perm")) {
      window.location.href = 'index2.html'
    }
  }
